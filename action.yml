@@ -18,6 +18,9 @@ inputs:
     # actions/cache has 10 GiB limit, and GitHub runners have a 14 GiB disk.
     # Limit to 7 GiB to avoid having the extracted cache fill the disk.
     default: "7168"
+  bin-dir:
+    description: The binary directory to seek files in.
+    default: "bin/"
 runs:
   using: "composite"
   steps:
@@ -30,4 +33,4 @@ runs:
       run: |
         echo "Building with flags:" platform=${{ inputs.platform }} target=${{ inputs.target }} ${{ env.SCONSFLAGS }}
         scons platform=${{ inputs.platform }} target=${{ inputs.target }} ${{ env.SCONSFLAGS }}
-        ls -l bin/
+        ls -l ${{ inputs.bin-dir }}

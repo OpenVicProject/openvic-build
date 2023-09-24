@@ -9,3 +9,4 @@
 | `sconsflags`          | The additional scons flags to provide for the build.                                                         | `string`  |                                         | No       |
 | `scons-cache`         | The scons cache path to use for the build.                                                                   | `string`  | `${{ github.workspace }}/.scons-cache/` | No       |
 | `scons-cache-limit`   | The maximum size of megabytes the scons cache can be in one run.                                             | `boolean` | `7168`                                  | No       |
+| `bin-dir`             | The binary directory to check with ls after the compile is complete.                                         | `string`  | `bin/`                                  | No       |
